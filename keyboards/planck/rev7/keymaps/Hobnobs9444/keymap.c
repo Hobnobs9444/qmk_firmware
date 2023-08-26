@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_planck_grid(
     HPR_TAB, UK_Q,    UK_W,    UK_E,    UK_R,    UK_T,    UK_Y,    UK_U,    UK_I,    UK_O,    UK_P,    KC_BSPC,
     CTL_ESC, UK_A,    UK_S,    UK_D,    UK_F,    UK_G,    UK_H,    UK_J,    UK_K,    UK_L,    UK_SCLN, CTL_ENT,
-    OS_LSFT, UK_Z,    UK_X,    UK_C,    UK_V,    UK_B,    UK_N,    UK_M,    UK_COMM, UK_DOT,  UK_SLSH, OS_RSFT ,
+    OS_LSFT, UK_Z,    UK_X,    UK_C,    UK_V,    UK_B,    UK_N,    UK_M,    UK_COMM, UK_DOT,  UK_SLSH, OS_RSFT,
     MEH_GRV, KC_LCTL, KC_LALT, KC_LGUI, OS_LWR,  KC_SPC,  KC_SPC,  OS_RSE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |   0  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |
+ * |   0  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   4  |   5  |   6  |   .  |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-  ALL_T(UK_0),   UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    KC_DEL,
+  ALL_T(UK_0),   UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    KC_BSPC,
   _______,       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   UK_4,    UK_5,    UK_6,    UK_DOT,  _______,
   _______,       KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  UK_1,    UK_2,    UK_3,    UK_COMM, _______,
   _______,       _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |   %  |   >  |   <  |   -  |      |      |   +  |   =  |   {  |   }  |   '  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |   ~  |   @  |   #  |   \  |      |      |   /  |   |  |   [  |   ]  |      |
+ * | Caps |   ~  |   @  |   #  |   \  |      |      |   _  |   |  |   [  |   ]  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Home |PageDn|PageUp| End  |
  * `-----------------------------------------------------------------------------------'
@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_planck_grid(
   _______, UK_EXLM, UK_DQUO, UK_PND,  UK_DLR,  UK_PERC, UK_CIRC, UK_AMPR, UK_ASTR, UK_LPRN, UK_RPRN, KC_DEL,
   _______, UK_PERC, UK_RABK, UK_LABK, UK_MINS, _______, _______, UK_PLUS, UK_EQL,  UK_LCBR, UK_RCBR, CTL_T(UK_QUOT),
-  _______, UK_TILD, UK_AT,   UK_HASH, UK_BSLS, _______, _______, UK_SLSH, UK_PIPE, UK_LBRC, UK_RBRC, _______,
+  KC_CAPS, UK_TILD, UK_AT,   UK_HASH, UK_BSLS, _______, _______, UK_UNDS, UK_PIPE, UK_LBRC, UK_RBRC, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
