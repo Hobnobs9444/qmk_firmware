@@ -3,12 +3,14 @@
 #include QMK_KEYBOARD_H
 #include "keymap_uk.h"
 
-enum planck_layers { _QWERTY, _LOWER, _RAISE, _ADJUST };
-
-enum planck_keycodes { QWERTY = SAFE_RANGE, BACKLIT, EXT_PLV };
-
-#define LOWER MO(_LOWER)
-#define RAISE MO(_RAISE)
+enum planck_layers {
+    _QWERTY = SAFE_RANGE,
+    _LOWER,
+    _RAISE,
+    _FUNC,
+    _GAME,
+    _ADJUST
+};
 
 // Custom macros
 #define CTL_ESC     CTL_T(KC_ESC)               // Tap for Esc, hold for Ctrl
@@ -32,16 +34,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   `  | Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * |   `  | Func | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
- // TODO: Better Alt solution would be nice for Alt-Tab
- // TODO: Left lower Ctrl is redundant
 [_QWERTY] = LAYOUT_planck_grid(
-    HPR_TAB, UK_Q,    UK_W,    UK_E,    UK_R,       UK_T,    UK_Y,    UK_U,       UK_I,    UK_O,    UK_P,    KC_BSPC,
-    CTL_ESC, UK_A,    UK_S,    UK_D,    UK_F,       UK_G,    UK_H,    UK_J,       UK_K,    UK_L,    UK_SCLN, CTL_ENT,
-    KC_LSFT, UK_Z,    UK_X,    UK_C,    UK_V,       UK_B,    UK_N,    UK_M,       UK_COMM, UK_DOT,  UK_SLSH, KC_RSFT,
-    MEH_GRV, KC_LCTL, KC_LALT, KC_LGUI, TT(_LOWER), KC_SPC,  KC_SPC,  TT(_RAISE), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    HPR_TAB, UK_Q,      UK_W,    UK_E,    UK_R,       UK_T,    UK_Y,    UK_U,       UK_I,    UK_O,    UK_P,    KC_BSPC,
+    CTL_ESC, UK_A,      UK_S,    UK_D,    UK_F,       UK_G,    UK_H,    UK_J,       UK_K,    UK_L,    UK_SCLN, CTL_ENT,
+    KC_LSFT, UK_Z,      UK_X,    UK_C,    UK_V,       UK_B,    UK_N,    UK_M,       UK_COMM, UK_DOT,  UK_SLSH, KC_RSFT,
+    MEH_GRV, MO(_FUNC), KC_LALT, KC_LGUI, TT(_LOWER), KC_SPC,  KC_SPC,  TT(_RAISE), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-  HPR_DEL,  UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    _______,
+  HPR_DEL, UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    UK_6,    UK_7,    UK_8,    UK_9,    UK_0,   _______,
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   UK_4,    UK_5,    UK_6,    UK_DOT,  _______,
   _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  UK_1,    UK_2,    UK_3,    UK_COMM, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
@@ -80,12 +80,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
+/* Func
+ * ,-----------------------------------------------------------------------------------.
+ * |      |      |      |      |      |      |      |  F7  |  F8  |  F9  | F10  |      |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |Alt+F4|  F5  |  F6  | F11  |      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |  F1  |  F2  |  F3  | F12  |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |             |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_FUNC] = LAYOUT_planck_grid(
+  _______, _______, _______, _______, _______, _______, _______, KC_F7,       KC_F8,   KC_F9,   KC_F10,  _______,
+  _______, _______, _______, _______, _______, _______, _______, RALT(KC_F4), KC_F5,   KC_F6,   KC_F11,  _______,
+  _______, _______, _______, _______, _______, _______, _______, KC_F1,       KC_F2,   KC_F3,   KC_F12,  _______,
+  _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______
+),
+// [ ] Add some volume up down etc. to function layer
+// [ ] gaming layer
+
 /* Adjust (Lower + Raise)
  *                      v------------------------RGB CONTROL--------------------v
  * ,-----------------------------------------------------------------------------------.
  * |      |      | Debug | RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|  Del |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |MUSmod|Aud on|Audoff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|Plover|      |
+ * |      |Clear |MUSmod|Aud on|Audoff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|Plover|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |Voice-|Voice+|Mus on|Musoff|MIDIon|MIDIof|      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -94,10 +114,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     _______, _______, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_DEL ,
-    _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______, _______, _______,  _______,
+    _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  _______, _______, _______,  _______,
     _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 )
+// [ ] do I actually need all this?
+
 
 };
 /* clang-format on */
