@@ -96,10 +96,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_FL] = LAYOUT_planck_grid(
-  _______, UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    _______, KC_F7,       KC_F8,   KC_F9,   KC_F10,  _______,
-  _______, UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    _______, RALT(KC_F4), KC_F5,   KC_F6,   KC_F11,  _______,
-  _______, _______, _______, _______, _______, _______, _______, KC_F1,       KC_F2,   KC_F3,   KC_F12,  _______,
-  _______, _______, _______, _______, _______, _______, _______, KC_MPLY,     KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
+  _______, UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+  _______, UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    _______, KC_F4,   KC_F5,   KC_F6,   KC_F11,  _______,
+  _______, _______, _______, _______, _______, _______, _______, KC_F1,   KC_F2,   KC_F3,   KC_F12,  _______,
+  _______, _______, _______, _______, _______, _______, _______, KC_MPLY, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
 ),
 
 /* Adjust (Lower + Raise)
@@ -134,6 +134,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
+// Not used, left for reference when I want to try and use custom keycodes
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case QWERTY:
