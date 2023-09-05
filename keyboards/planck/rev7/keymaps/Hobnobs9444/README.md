@@ -29,7 +29,11 @@
   - MT for control on Esc/Enter works very nicely and makes Ctrl easily accessible bilaterally
   - OSM mods generally nice, though toggle on can get you stuck in caps from time to time 
 
-
+## TODO
+- [ ] Gaming layer
+- [ ] Decide on tag toggle vs OSM for layers
+- [ ] Decide on OSM shifts
+- [ ] Swap Alt/GUI to windows config? better for alt+tab and gaming
 
 ## implications for design
 letters, numbers and symbols as the are on qwerty to keep the transition easy
@@ -103,7 +107,7 @@ could tap dance closing brackets as these are generally autoclosed for me anyway
  * ,-----------------------------------------------------------------------------------.
  * |      |   1  |   2  |   3  |   4  |   5  |      |  F7  |  F8  |  F9  | F10  |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |   6  |   7  |   8  |   9  |   0  |      |Alt+F4|  F5  |  F6  | F11  |      |
+ * |      |   6  |   7  |   8  |   9  |   0  |      |  F4  |  F5  |  F6  | F11  |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |  F1  |  F2  |  F3  | F12  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|

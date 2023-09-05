@@ -21,10 +21,6 @@ enum planck_keycodes {
 #define HPR_TAB     ALL_T(KC_TAB)               // Tap for Tab, hold for Hyper (Super+Ctrl+Alt+Shift)
 #define HPR_DEL     ALL_T(KC_DEL)               // Tap for Tab, hold for Hyper (Super+Ctrl+Alt+Shift)
 #define MEH_GRV     MEH_T(UK_GRV)               // Tap for Backtick, hold for Meh (Ctrl+Alt+Shift)
-#define OS_LSFT     OSM(MOD_LSFT)               // One shot left shift
-#define OS_RSFT     OSM(MOD_RSFT)               // One shot left shift
-#define OS_LWR      OSL(_LOWER)                  // One shot lower
-#define OS_RSE      OSL(_RAISE)                  // One shot lower
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -37,14 +33,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   `  | Func | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * |   `  | Func | GUI  | Alt  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    HPR_TAB, UK_Q,      UK_W,    UK_E,    UK_R,       UK_T,    UK_Y,    UK_U,       UK_I,    UK_O,    UK_P,    KC_BSPC,
-    CTL_ESC, UK_A,      UK_S,    UK_D,    UK_F,       UK_G,    UK_H,    UK_J,       UK_K,    UK_L,    UK_SCLN, CTL_ENT,
-    KC_LSFT, UK_Z,      UK_X,    UK_C,    UK_V,       UK_B,    UK_N,    UK_M,       UK_COMM, UK_DOT,  UK_SLSH, KC_RSFT,
-    MEH_GRV, MO(_FL), KC_LALT, KC_LGUI, TT(_LOWER), KC_SPC,  KC_SPC,  TT(_RAISE), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    HPR_TAB, UK_Q,    UK_W,    UK_E,    UK_R,       UK_T,    UK_Y,    UK_U,       UK_I,    UK_O,    UK_P,    KC_BSPC,
+    CTL_ESC, UK_A,    UK_S,    UK_D,    UK_F,       UK_G,    UK_H,    UK_J,       UK_K,    UK_L,    UK_SCLN, CTL_ENT,
+    KC_LSFT, UK_Z,    UK_X,    UK_C,    UK_V,       UK_B,    UK_N,    UK_M,       UK_COMM, UK_DOT,  UK_SLSH, KC_RSFT,
+    MEH_GRV, MO(_FL), KC_LGUI, KC_LALT, TT(_LOWER), KC_SPC,  KC_SPC,  TT(_RAISE), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower
@@ -88,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      |   1  |   2  |   3  |   4  |   5  |      |  F7  |  F8  |  F9  | F10  |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |   6  |   7  |   8  |   9  |   0  |      |Alt+F4|  F5  |  F6  | F11  |      |
+ * |      |   6  |   7  |   8  |   9  |   0  |      |  F4  |  F5  |  F6  | F11  |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |  F1  |  F2  |  F3  | F12  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
