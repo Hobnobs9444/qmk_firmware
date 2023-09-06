@@ -79,13 +79,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_CAPS, UK_BSLS, UK_LABK, UK_LBRC, UK_LPRN, UK_LCBR, UK_RCBR, UK_RPRN, UK_RBRC, UK_RABK, _______, CW_TOGG,
   _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
-// [ ] gaming layer
 
 /* Gaming
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+ * |   `  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |Enter |
+ * | Tab  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -93,27 +92,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_GAME] = LAYOUT_planck_grid(
-    KC_TAB,  UK_Q,    UK_W,    UK_E,    UK_R,       UK_T,    UK_Y,  UK_U,   UK_I,    UK_O,    UK_P,    KC_BSPC,
-    KC_ESC,  UK_A,    UK_S,    UK_D,    UK_F,       UK_G,    UK_H,  UK_J,   UK_K,    UK_L,    UK_SCLN, KC_ENT,
-    KC_LSFT, UK_Z,    UK_X,    UK_C,    UK_V,       UK_B,    UK_N,  UK_M,   UK_COMM, UK_DOT,  UK_SLSH, KC_RSFT,
-    KC_LCTL, MO(_FL), KC_LGUI, KC_LALT, KC_SPC, MO(_FL),  MO(_FL),  ______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_GRV,  UK_Q,    UK_W,    UK_E,    UK_R,       UK_T, UK_Y,     UK_U,    UK_I,    UK_O,    UK_P,    KC_BSPC,
+    KC_TAB,  UK_A,    UK_S,    UK_D,    UK_F,       UK_G, UK_H,     UK_J,    UK_K,    UK_L,    UK_SCLN, KC_ENT,
+    KC_LSFT, UK_Z,    UK_X,    UK_C,    UK_V,       UK_B, UK_N,     UK_M,    UK_COMM, UK_DOT,  UK_SLSH, KC_RSFT,
+    KC_LCTL, MO(_FL), KC_LGUI, KC_LALT, KC_SPC, MO(_FL),  MO(_FL),  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Function Layer
  * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |      |  F7  |  F8  |  F9  | F10  |      |
+ * |      |   1  |   2  |   3  |   4  |   5  |      |  F7  |  F8  |  F9  | F10  |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Caps |   6  |   7  |   8  |   9  |   0  |      |  F4  |  F5  |  F6  | F11  |      |
+ * | Esc  |   6  |   7  |   8  |   9  |   0  |      |  F4  |  F5  |  F6  | F11  |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |   \  |      |      |      |      |      |  F1  |  F2  |  F3  | F12  |      |
+ * | Caps |   \  |      |      |      |      |      |  F1  |  F2  |  F3  | F12  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             | Play | Prev | Vol+ | Vol- | Next |
  * `-----------------------------------------------------------------------------------'
  */
 [_FL] = LAYOUT_planck_grid(
-  KC_GRV,  UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-  KC_CAPS, UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    _______, KC_F4,   KC_F5,   KC_F6,   KC_F11,  _______,
-  _______, UK_BSLS, _______, _______, _______, _______, _______, KC_F1,   KC_F2,   KC_F3,   KC_F12,  _______,
+  _______, UK_1,    UK_2,    UK_3,    UK_4,    UK_5,    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+  KC_ESC,  UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    _______, KC_F4,   KC_F5,   KC_F6,   KC_F11,  _______,
+  KC_CAPS, UK_BSLS, _______, _______, _______, _______, _______, KC_F1,   KC_F2,   KC_F3,   KC_F12,  _______,
   _______, _______, _______, _______, _______, _______, _______, KC_MPLY, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
 ),
 
