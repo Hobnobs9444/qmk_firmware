@@ -99,7 +99,7 @@ could tap dance closing brackets as these are generally autoclosed for me anyway
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | Func | GUI  | Alt  | Space|    Func     |      | Left | Down |  Up  |Right |
+ * | Ctrl | Func | GUI  | Alt  | Space|    Func     | Game | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 
